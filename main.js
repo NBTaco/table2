@@ -32,8 +32,6 @@ const table = document.createElement("table")
 const tableHeader = document.createElement("thead")
 const tableHeaderRow = document.createElement("tr")
 
-const tableHeaderRowLastName = document.createElement("th")
-tableHeaderRowLastName.innerHTML = "Vezetéknév"
 
 createTableCell("td",'Vezetéknév', tableHeaderRow )
 
@@ -77,6 +75,7 @@ form.addEventListener('submit', function (e) {
 
     RenderTable()
     console.log(array)
+    form.reset()
 })
 
 RenderTable()
@@ -84,10 +83,10 @@ RenderTable()
 document.body.appendChild(table)
 table.appendChild(tableHeader)
 tableHeader.appendChild(tableHeaderRow)
-tableHeaderRow.appendChild(tableHeaderRowLastName)
 tableHeaderRow.appendChild(tableHeaderRowFirstName)
-tableHeaderRow.appendChild(tableHeaderRowPet)
 tableHeaderRow.appendChild(tableHeaderRowMarried)
+tableHeaderRow.appendChild(tableHeaderRowPet)
+
 table.appendChild(tableBody)
 
 function RenderTable() {
